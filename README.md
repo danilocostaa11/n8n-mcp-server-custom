@@ -26,9 +26,9 @@ Error calling 'initialize': EOF
 
 **Our Solution:**
 
-This custom implementation was built from scratch, replicating the functionality of the official server by implementing **27 essential tools** based on the n8n REST API. This ensures full compatibility with Antigravity while maintaining feature parity with the official server.
+We built this implementation from scratch, replicating the functionality of the official server by implementing **27 essential tools** based on the n8n REST API. This guarantees full compatibility with Antigravity while preserving feature parity with the official server.
 
-**If you're experiencing the same EOF error with Antigravity, this server is the solution.**
+**If you encounter the same EOF error with Antigravity, this server is the fix.**
 
 ### ✨ Features
 
@@ -39,9 +39,17 @@ This custom implementation was built from scratch, replicating the functionality
 - 🚀 **Easy Setup** - Clone, configure, and run in minutes
 - 🔗 **Feature Parity** - Implements essential functionality from the [official server](https://github.com/modelcontextprotocol/servers/tree/main/src/n8n)
 
+### 📸 Result in Action
+
+![Workflow created with MCP](assets/workflow-example.png)
+_Workflow #76 created automatically, with the tag "🛠️ Antigravity MCP" attached._
+
+![Tools Overview](assets/tools-creation.png)
+_All 27 MCP tools listed by the `list-tools` script._
+
 ### 🚀 Quick Start
 
-````bash
+```bash
 # Clone the repository
 git clone https://github.com/burnham/n8n-mcp-server-custom.git
 cd n8n-mcp-server-custom
@@ -51,9 +59,29 @@ npm install
 
 # Configure environment
 cp .env.example .env
-# Edit .env with your n8n URL and API key
+# Edit .env with your N8N_API_URL and N8N_API_KEY
 
 # Build
+npm run build
+
+# Test connection (lists workflows)
+npm test
+```
+
+### 🛠️ Available Tools (27 total)
+
+#### Workflows (8 tools)
+
+- List, create, update, delete workflows
+- Execute workflows with custom data
+- Activate / deactivate workflows
+
+#### Executions (3 tools)
+
+- List workflow executions with filters
+- Get execution details
+- Stop running executions
+
 #### Variables (5 tools)
 
 - Full CRUD operations on environment variables
@@ -96,7 +124,7 @@ Edit your Antigravity config file:
     }
   }
 }
-````
+```
 
 **Important:**
 
