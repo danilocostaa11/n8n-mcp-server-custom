@@ -41,7 +41,7 @@ This custom implementation was built from scratch, replicating the functionality
 
 ### 🚀 Quick Start
 
-```bash
+````bash
 # Clone the repository
 git clone https://github.com/burnham/n8n-mcp-server-custom.git
 cd n8n-mcp-server-custom
@@ -54,26 +54,6 @@ cp .env.example .env
 # Edit .env with your n8n URL and API key
 
 # Build
-npm run build
-
-# Test connection
-npm test
-```
-
-### 🛠️ Available Tools (27 total)
-
-#### Workflows (8 tools)
-
-- List, create, update, delete workflows
-- Execute workflows with custom data
-- Activate/deactivate workflows
-
-#### Executions (3 tools)
-
-- List workflow executions with filters
-- View execution details
-- Stop running executions
-
 #### Variables (5 tools)
 
 - Full CRUD operations on environment variables
@@ -116,7 +96,7 @@ Edit your Antigravity config file:
     }
   }
 }
-```
+````
 
 **Important:**
 
