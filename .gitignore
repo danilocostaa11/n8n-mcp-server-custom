@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archives y backups
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.backup
+*.bak
+*.old
+
+# Archivos temporales
+*.tmp
+*.temp
+~*
+
+# Archivos de configuración con credenciales
+mcp_config.json
+*-config.json
+!tsconfig.json
+!package.json
