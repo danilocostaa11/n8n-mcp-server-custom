@@ -4,7 +4,7 @@
  * Test script to verify workflow creation
  */
 
-import { N8nClient } from './dist/n8n-client.js';
+import { N8nClient } from '../dist/n8n-client.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

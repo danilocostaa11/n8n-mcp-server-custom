@@ -5,7 +5,7 @@
  * Basado en las herramientas del MCP Server personalizado
  */
 
-import { N8nClient } from './dist/n8n-client.js';
+import { N8nClient } from '../dist/n8n-client.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

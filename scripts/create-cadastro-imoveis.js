@@ -25,22 +25,37 @@ if (!N8N_API_URL || !N8N_API_KEY) {
     process.exit(1);
 }
 
-// Configurações - ALTERE ESTES VALORES
-const CONFIG = {
-    // Evolution API
-    EVOLUTION_API_URL: 'http://localhost:8080',
-    EVOLUTION_API_KEY: 'SUA_API_KEY_EVOLUTION',
+function requiredEnv(name, fallback = '') {
+    const value = process.env[name] ?? fallback;
+    if (!value || value.startsWith('SEU_') || value.startsWith('SUA_')) {
+        throw new Error(`Variável obrigatória não configurada: ${name}`);
+    }
+    return value;
+}
 
-    // Google Drive
-    GOOGLE_DRIVE_FOLDER_ID: 'SEU_FOLDER_ID_AQUI',
+let CONFIG;
+try {
+    // Configurações vindas do .env
+    CONFIG = {
+        // Evolution API
+        EVOLUTION_API_URL: requiredEnv('EVOLUTION_API_URL', 'http://localhost:8080'),
+        EVOLUTION_API_KEY: requiredEnv('EVOLUTION_API_KEY'),
 
-    // Google Sheets
-    GOOGLE_SHEETS_ID: 'SEU_SPREADSHEET_ID_AQUI',
-    GOOGLE_SHEETS_NAME: 'Prospecção',
+        // Google Drive
+        GOOGLE_DRIVE_FOLDER_ID: requiredEnv('GOOGLE_DRIVE_FOLDER_ID'),
 
-    // Notion
-    NOTION_DATABASE_ID: 'SEU_DATABASE_ID_NOTION'
-};
+        // Google Sheets
+        GOOGLE_SHEETS_ID: requiredEnv('GOOGLE_SHEETS_ID'),
+        GOOGLE_SHEETS_NAME: process.env.GOOGLE_SHEETS_NAME || 'Prospecção',
+
+        // Notion
+        NOTION_DATABASE_ID: requiredEnv('NOTION_DATABASE_ID')
+    };
+} catch (error) {
+    console.error(`❌ Error: ${error.message}`);
+    console.error('   Atualize o arquivo .env antes de executar este script.');
+    process.exit(1);
+}
 
 const workflow = {
     name: 'Cadastro Imóveis - WhatsApp para Sheets/Notion',

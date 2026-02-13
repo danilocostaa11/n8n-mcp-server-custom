@@ -15,6 +15,35 @@
 
 ---
 
+## ▶️ Execução dos Scripts
+
+1. Configure o `.env` com todas as variáveis necessárias (`N8N_*`, `EVOLUTION_*`, `GOOGLE_*`, `NOTION_*`, `TRELLO_*`).
+2. Compile o projeto:
+
+```bash
+npm run build
+```
+
+3. Verifique conexão com n8n:
+
+```bash
+npm run verify:n8n
+```
+
+4. Crie a automação de cadastro de imóveis:
+
+```bash
+npm run automation:create:cadastro-imoveis
+```
+
+5. Opcional: crie a automação de prospecção no Trello:
+
+```bash
+npm run automation:create:prospeccao-trello
+```
+
+---
+
 ## 🔗 URLs do Webhook
 
 | Tipo | URL |

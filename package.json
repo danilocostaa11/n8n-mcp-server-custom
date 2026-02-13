@@ -11,7 +11,14 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
-    "test": "node dist/index.js"
+    "test": "node dist/index.js",
+    "verify:n8n": "node scripts/verify.js",
+    "test:client": "node scripts/test.js",
+    "test:workflow-create": "node scripts/test-create-workflow.js",
+    "automation:create:sheets-notion-whatsapp": "node scripts/create-automation.js",
+    "automation:create:cadastro-imoveis": "node scripts/create-cadastro-imoveis.js",
+    "automation:create:prospeccao-trello": "node scripts/create-prospeccao-trello.js",
+    "automation:create:trello-telegram": "node scripts/create-trello-telegram.js"
   },
   "keywords": [
     "mcp",
